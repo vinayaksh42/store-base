@@ -41,10 +41,12 @@ export class MapContainer extends Component {
     return (
       <MuiThemeProvider>
         <>
+        
           <Dialog
             open
             fullWidth
             maxWidth='sm'
+            style={{overflow: 'hidden'}}
           >
             <AppBar title="Enter User Details" />
             <TextField
@@ -66,6 +68,15 @@ export class MapContainer extends Component {
               fullWidth
             />
             <br />
+            
+           
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={this.continue}
+            >Continue</Button>
+
+             <h1>Select your location and click on the red indicator to confirm</h1>
             <CurrentLocation
               style={mapStyles}
               centerAroundCurrentLocation
@@ -82,12 +93,7 @@ export class MapContainer extends Component {
                 </div>
               </InfoWindow>
             </CurrentLocation>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
           </Dialog>
         </>
       </MuiThemeProvider>
@@ -96,8 +102,7 @@ export class MapContainer extends Component {
 }
 
 const mapStyles = {
-  width: '400px',
-  height: '400px',
+  overflow: 'hidden'
 };
 
 export default GoogleApiWrapper({
